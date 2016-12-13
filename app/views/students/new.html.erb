@@ -1,9 +1,2 @@
 <h3>新增页面</h3>
-<br>
-<%= form_for @student do |f| %>
-  <%= f.text_field :name %>
-  <%= f.radio_button :sex, [["1",男]["2",女]],:first %>
-  <%= f.text_field :name %>
-  <%= f.text_field :name %>
-  <%= f.text_field :name %>
-<% end %>
+<%= render'form'%>

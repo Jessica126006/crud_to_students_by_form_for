@@ -9,21 +9,24 @@
     <td>爱好</td>
     <td>自我评价</td>
     <td>星座</td>
+    <td>操作</td>
   </tr>
 
   <% @students.each do |student| %>
     <tr>
       <!--将数据库中的布尔类型转变为字符串男和女-->
-      <% if (student.sex==true)
+      <% if (student.sex==false)
            @sex='男'
-           else
+         elsif(student.sex==true)
              @sex='女' end %>
       <td><%= student.id %></td>
       <td><%= student.name %></td>
       <td><%= @sex %></td>
-      <td><%= student.hobby %></td>
+      <td><%= raw(student.hobby) %></td>
       <td><%= student.evaluation %></td>
       <td><%= student.constellation %></td>
+      <td><%= link_to '修改'%></td>
+      <td><%= link_to '删除', student_path(student),:method => :delete %></td>
     </tr>
   <% end %>
 
